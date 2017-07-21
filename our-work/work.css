@@ -74,5 +74,10 @@ a.back {
 		display: inline-block;
 		width: 49%;
 		max-width: 500px;
+		vertical-align: baseline;
+		margin-bottom: 0.5em;
+	}
+	section img.leader {
+		width: 100%;
 	}
 }
