@@ -8,14 +8,41 @@
   <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic|Playfair+Display:900italic' rel='stylesheet' type='text/css'>
   <style>
 	  * { box-sizing: border-box; }
-	  body { font-family: "Lato"; font-size: 18px; line-height: 21px; color: black; background-color: #ffeec1; }
+	  body { font-family: "Lato"; font-size: 18px; line-height: 21px; color: black; background-color: #ffeec1; margin: 0;}
 	  h1 { font-family: "Playfair Display"; font-style: italic; font-weight: bold; font-size: 3em; line-height: 1.1em; margin: 0.2em 0;}
 	  h2 { font-style: italic; font-weight: normal; font-size: 1.5em; line-height: 1.1em; margin-top: 0;}
 	  #main { width: 90%; max-width: 32em; margin: 1em auto; }
 	  a { text-decoration: none; background-color: rgba(112,0,112,0.075); border-radius: 0.2em; padding: 0 0.2em; }
+	  /* ART SHOW BANNER */
+	  div#banner { padding: 1em; margin-bottom: 1em; background-color: #9821bf; color: white;
+	    background: -moz-linear-gradient(-45deg, #ff3232 0%, #fcfc2f 17%, #30ff30 33%, #30f8ff 50%, #3037ff 67%, #f830ff 83%, #ff3030 100%); /* FF3.6-15 */
+	    background: -webkit-linear-gradient(-45deg, #ff3232 0%,#fcfc2f 17%,#30ff30 33%,#30f8ff 50%,#3037ff 67%,#f830ff 83%,#ff3030 100%); /* Chrome10-25,Safari5.1-6 */
+	    background: linear-gradient(135deg, #ff3232 0%,#fcfc2f 17%,#30ff30 33%,#30f8ff 50%,#3037ff 67%,#f830ff 83%,#ff3030 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3232', endColorstr='#ff3030',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	  }
+	  #banner a { color: white; background-color: rgba(0,0,0,0.25); line-height: 1.25em; text-shadow: 0 -1px 0 #000; display: block; text-align: center; }
+	  span.unbreakable { white-space: nowrap; }
   </style>
 </head>
 <body>
+  <div id="banner">
+    <a href="https://www.eventbrite.com/e/code-kitchen-art-show-synesthesia-tickets-37551572765">We're having an art show—<em>SYNESTHESIA</em>—at MJD <span id="countdown">in a few days</span>! <span class="unbreakable">Get your tickets here...</span></a>
+    <script>
+    var eventMonth = 9-1; // subtract 1 because js months start at 0
+    var eventDay = 23;
+    
+    var parent = document.querySelector("body");
+    var banner = document.querySelector("#banner");
+    var countdowntext = document.querySelector("#countdown");
+    var today = new Date();
+    if (today.getMonth() > eventMonth || today.getDate() > eventDay) {
+        body.removeChild(banner);
+    } else {
+        var blurb = eventDay - today.getDate();
+        countdowntext.innerHTML = (blurb > 1) ? "in "+blurb+" days" : ((blurb > 0) ? "in 1 day" : "tonight"); 
+    }
+    </script>
+  </div>
   <div id="main">
 	  <h1>Code Kitchen</h1>
 	  <h2>A San Diego Creative Coding Get-Together</h2>
