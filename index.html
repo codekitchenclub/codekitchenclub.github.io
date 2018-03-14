@@ -36,7 +36,7 @@
     var countdowntext = document.querySelector("#countdown");
     var today = new Date();
     if (today.getMonth() > eventMonth || today.getDate() > eventDay) {
-        body.removeChild(banner);
+        parent.removeChild(banner);
     } else {
         var blurb = eventDay - today.getDate();
         countdowntext.innerHTML = (blurb > 1) ? "in "+blurb+" days" : ((blurb > 0) ? "in 1 day" : "tonight"); 
